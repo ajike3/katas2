@@ -6,51 +6,58 @@ function add(j,k) {
   return result;
 }
 console.log( add(8, 9));
-console.log( add (8, 17))
 
-// multiply//
-function multiply(ab, cd) {
-  let ef = 0;
-  let counter = 0;
-  while (counter < ab) {
-  ef += cd;
-  counter++;
-  result = ef
-}
-  return result;
-}
+// multiply a=6, b=4//
+function multiply(a, b) {
+  let count = 0;
+  let answer = 0;
+  while(count <b){
+    answer = add(a, answer);
+    count++;
+    }
+  return answer;
+  }
+
 console.log(multiply(6, 4));
 
 //power//
-function power(p, q) {
-  let a = 1;
-  let counter = 0;
-  while (counter < q) {
-  a = multiply(p, a);
-  counter++;
+function power(x, n) {
+  let count = 0;
+  let answer = 1
+  while (count < n) {
+  answer = multiply(x, answer);
+  count++;
   }
-  result = a
-  return result;
+  return answer;
 }
-console.log(power(5, 6));
+console.log(power(2, 8));
 
 //factorial//
 
 function factorial(c) {
-  let z = 7;
-  let counter = 0;
-  let test = c;
-  while (counter < test) {
-  z = multiply(z, c);
-  c = c - 1;
-  counter++;
+  let count = 0;
+  let answer = 1;
+  let decrementingNumber = c;
+  while (count < c) {
+answer = multiply(decrementingNumber, answer);
+decrementingNumber--;
+  count++;
   }
-  result = z
-  return z;
+  return answer;
 }
-console.log(factorial(6));
+console.log(factorial(5));
 
 //"Fibonacci" function works and does not use built-in operators
-function Fibonacci(v) {
-
+function Fibonacci(n) {
+  let count = 0
+  let fib = [0, 1]
+  while(count < n- 2){
+    console.log(fib)
+    fib.push(add(fib[count], fib[count + 1]))
+    count++;
+  }
+return fib;
 }
+
+letbonus = Fibonacci(8);
+console.log("Fibonacci - Bonus",)
